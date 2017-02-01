@@ -1,0 +1,27 @@
+development:
+  clients:
+    default:
+      database: locomotiveapp_dev
+      hosts:
+        - localhost:27017
+      options:
+
+  # Configure Mongoid specific options. (optional)
+  options:
+
+test:
+  clients:
+    default:
+      database: locomotiveapp_test
+      hosts:
+        - localhost:27017
+      options:
+        max_pool_size: 1
+
+production:
+  clients:
+    default:
+      database: <%= ENV['DABATASE_NAME'] %>
+      hosts: <%= ENV['MONGODB_HOST'] %>
+      options:
+        max_pool_size: 1
