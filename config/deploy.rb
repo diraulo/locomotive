@@ -9,9 +9,9 @@ set :repo_url, 'git@github.com:diraulo/locomotive.git'
 
 set :deploy_to, ENV['APP_PATH']
 
-append :linked_files, 'config/database.yml', 'config/secrets.yml', '.env'
+set :linked_files, ['config/mongoid.yml', 'config/secrets.yml', '.env']
 
-append :linked_dirs, [
+set :linked_dirs, [
   'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle',
   'public/system', 'public/uploads', 'public/.well-known', 'public/storage',
   'public/sites', 'public/uploaded_assets'
